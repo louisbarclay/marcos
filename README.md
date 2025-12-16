@@ -4,11 +4,11 @@
 
 **Which carriage door, for which exit, for which station?**
 
-MARCOS helps you find the best carriage and door position for your metro exit. Never waste time walking through crowded trains again—know exactly where to stand for the fastest exit.
+MARCOS helps you find the best carriage and door position for your metro exit. Don't waste time fighting through the crowds at platforms — know exactly where to stand for the fastest exit.
 
 ## What is MARCOS?
 
-MARCOS is a simple web application that tells you which carriage and door to use when traveling between metro stations, so you can exit at the most convenient point for your destination.
+MARCOS is a simple web application, built on top of a crowdsourced, verified database, that tells you which carriage and door to use when traveling on a metro system, so you can exit at the most convenient point for your destination.
 
 Simply select your metro system, line, departure station, and destination station, and MARCOS will show you the optimal carriage and door positions for each exit at your destination.
 
