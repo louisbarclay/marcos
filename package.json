@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "generate-data": "tsx scripts/generate-data.ts",
+    "dev": "npm run generate-data && next dev",
+    "build": "npm run generate-data && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -29,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

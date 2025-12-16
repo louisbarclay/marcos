@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getStations } from "@/lib/data";
 
+export const runtime = 'edge';
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
