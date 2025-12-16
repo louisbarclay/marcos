@@ -4,6 +4,12 @@
 
 **Which carriage door, for which exit, for which station?**
 
+<div align="center">
+
+**[🚇 Try MARCOS Live →](https://marcos-dzb.pages.dev/)** • **[📖 View Documentation ↓](#station-data-format)**
+
+</div>
+
 MARCOS helps you find the best carriage and door position for your metro exit. Don't waste time fighting through the crowds at platforms — know exactly where to stand for the fastest exit.
 
 ## What is MARCOS?
@@ -33,7 +39,7 @@ data/systems/
         └── station_name.yaml
 ```
 
-### Station Data Format
+### Station Data Format {#station-data-format}
 
 Each station is stored as a YAML file following this simple format. Here's the example from **Tottenham Court Road**:
 
