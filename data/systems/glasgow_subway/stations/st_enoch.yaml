@@ -1,0 +1,13 @@
+station_name: St Enoch
+
+platforms:
+  inner_circle:
+    inner:
+      door_side: left
+      exits:
+        all_passengers: 1.1
+  outer_circle:
+    outer:
+      door_side: left
+      exits:
+        all_passengers: 1.1
