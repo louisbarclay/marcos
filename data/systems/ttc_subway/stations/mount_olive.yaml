@@ -1,0 +1,11 @@
+station_name: Mount Olive
+status: dummy
+
+platforms:
+  "6 (Finch West)":
+    northbound:
+      door_side: right
+      exits:
+    southbound:
+      door_side: right
+      exits:

@@ -1,0 +1,11 @@
+station_name: Bayview
+status: dummy
+
+platforms:
+  "4 (Sheppard)":
+    northbound:
+      door_side: right
+      exits:
+    southbound:
+      door_side: right
+      exits:
