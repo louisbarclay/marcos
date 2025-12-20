@@ -88,19 +88,39 @@ function generateDataModule() {
           const stationId = file.replace(".yaml", "");
           const stationPath = path.join(stationsPath, file);
           try {
-            const stationData = yaml.load(fs.readFileSync(stationPath, "utf8")) as StationData;
+            const fileContent = fs.readFileSync(stationPath, "utf8").trim();
+            if (!fileContent) {
+              console.warn(`Skipping empty station file ${stationId} in ${system.id}`);
+              continue;
+            }
+            
+            const stationData = yaml.load(fileContent) as StationData | null;
+            
+            // Skip if stationData is null/undefined or doesn't have platforms
+            if (!stationData || typeof stationData !== 'object' || !stationData.platforms) {
+              console.warn(`Skipping station ${stationId} in ${system.id}: missing or invalid platforms`);
+              continue;
+            }
             
             // Clean up null values in platforms (empty YAML entries become null)
-            if (stationData.platforms) {
-              Object.keys(stationData.platforms).forEach((lineId) => {
-                const linePlatforms = stationData.platforms[lineId];
-                Object.keys(linePlatforms).forEach((direction) => {
-                  if (linePlatforms[direction] === null || linePlatforms[direction] === undefined) {
-                    linePlatforms[direction] = {};
+            Object.keys(stationData.platforms).forEach((lineId) => {
+              const linePlatforms = stationData.platforms[lineId];
+              if (!linePlatforms || typeof linePlatforms !== 'object') {
+                stationData.platforms[lineId] = {};
+                return;
+              }
+              Object.keys(linePlatforms).forEach((direction) => {
+                const directionData = linePlatforms[direction];
+                if (directionData === null || directionData === undefined) {
+                  linePlatforms[direction] = {};
+                } else if (typeof directionData === 'object') {
+                  // Remove null exits (JSON.stringify will omit undefined)
+                  if (directionData.exits === null) {
+                    delete directionData.exits;
                   }
-                });
+                }
               });
-            }
+            });
             
             stationsData[system.id][stationId] = stationData;
           } catch (error) {
@@ -144,7 +164,7 @@ export const systems: SystemInfo[] = ${JSON.stringify(systems, null, 2)};
 
 export const lines: Record<string, LineInfo[]> = ${JSON.stringify(linesData, null, 2)};
 
-export const stations: Record<string, Record<string, StationData>> = ${JSON.stringify(stationsData, null, 2)};
+export const stations: Record<string, Record<string, StationData>> = ${JSON.stringify(stationsData, (key, value) => value === null ? undefined : value, 2)};
 `;
 
   fs.writeFileSync(outputFile, output, "utf8");
