@@ -1,0 +1,13 @@
+station_name: Buchanan Street
+
+platforms:
+  inner_circle:
+    inner:
+      door_side: right
+      exits:
+        all_passengers: 4.2
+  outer_circle:
+    outer:
+      door_side: left
+      exits:
+        all_passengers: 1.1

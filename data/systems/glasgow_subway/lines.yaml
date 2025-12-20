@@ -1,0 +1,4 @@
+- id: inner_circle
+  name: Inner Circle (anticlockwise)
+- id: outer_circle
+  name: Outer Circle (clockwise)

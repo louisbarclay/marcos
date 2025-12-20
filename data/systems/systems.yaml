@@ -2,5 +2,7 @@
   name: London Underground
 - id: nyc_subway
   name: NYC Subway
+- id: glasgow_subway
+  name: Glasgow Subway
 - id: ttc_subway
   name: Toronto TTC Subway
