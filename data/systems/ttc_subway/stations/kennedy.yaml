@@ -1,0 +1,11 @@
+station_name: Kennedy
+status: dummy
+
+platforms:
+  "2 (Bloor - Danforth)":
+    northbound:
+      door_side: right
+      exits:
+    southbound:
+      door_side: right
+      exits:

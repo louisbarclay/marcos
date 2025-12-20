@@ -1,0 +1,17 @@
+station_name: King
+status: dummy
+
+platforms:
+  "1 (Yonge - University)":
+    northbound:
+      door_side: right
+      exits:
+        king_street_elevator: 2.3
+        king_street_stairs: 3.2
+        commerce_court_stairs: 5.3
+    southbound:
+      door_side: right
+      exits:
+        king_street_elevator: 5.2
+        king_street_stairs: 4.1
+        commerce_court_stairs: 3.2

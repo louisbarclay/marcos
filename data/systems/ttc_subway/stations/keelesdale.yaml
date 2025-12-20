@@ -1,0 +1,11 @@
+station_name: Keelesdale
+status: dummy
+
+platforms:
+  "5 (Eglinton)":
+    northbound:
+      door_side: right
+      exits:
+    southbound:
+      door_side: right
+      exits:
