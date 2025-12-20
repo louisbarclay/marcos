@@ -16,8 +16,3 @@ This project requires the `nodejs_compat` compatibility flag to be enabled in Cl
 ### Why is this needed?
 
 The build script (`scripts/generate-data.ts`) uses Node.js APIs (`fs`, `path`) to read YAML files and generate the static data module. While the runtime API routes use Edge Runtime, the build process itself requires Node.js compatibility.
-
-
-
-
-
