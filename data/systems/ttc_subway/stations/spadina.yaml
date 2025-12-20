@@ -1,0 +1,11 @@
+station_name: Spadina
+status: dummy
+
+platforms:
+  "1 (Yonge - University)":
+    northbound:
+      door_side: right
+      exits:
+    southbound:
+      door_side: right
+      exits:
